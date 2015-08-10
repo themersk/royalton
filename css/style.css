@@ -1,0 +1,18 @@
+.jumbotron {
+	background-image: url('../images/blurry-bg.jpg');
+	background-size: cover;
+	background-position: top center;
+	color: #fff;
+}
+
+
+img {
+	  transition: all 0.3s ease;
+
+}
+
+
+.sticky-under {
+	position: fixed;
+	top:74px;
+}
