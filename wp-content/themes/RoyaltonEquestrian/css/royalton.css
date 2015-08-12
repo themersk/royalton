@@ -1,0 +1,142 @@
+/* COLORS:::::::
+#8b887b - beige for fonts on white
+#b2b0a2 - beige for fonts on black
+#a49042 - gold
+
+
+
+*/
+
+
+@font-face{ 
+	font-family: 'Didot';
+	src: url('../../fonts/didot.eot');
+	src: url('../../fonts/didot.eot?#iefix') format('embedded-opentype'),
+	     url('../../fonts/didot.woff') format('woff'),
+	     url('../../fonts/didot.ttf') format('truetype'),
+}
+
+
+html {	
+	height:100%;
+	width:100%;
+	}
+	
+body {
+	font-family: 'EB Garamond', serif;
+	font-size: 62.5% ;
+	color: #8b887b;
+	background: #fff;
+	height:100%;
+	width:100%;
+}
+
+.row {
+	max-width:100%;
+	font-size: 2.0em;
+}
+
+.section {
+	padding: 5em 5em !important;
+}
+
+p {
+	font-size:1em;
+}
+
+.section.dark {
+	background: #000;
+	color: #b2b0a2;
+}
+
+.widget-title {
+	color: #a49042;
+	font-family: "Didot", Georgia, serif;
+	font-size: 1.5em;
+    font-weight: bold;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-top: 1px #a49042 solid;
+	border-bottom: 1px #a49042 solid;
+	text-align:center;
+	margin: 0 auto;
+	display: block;
+	width: auto;
+	max-width: 500px;
+	
+}
+
+/*--- Top Slider ---- */
+
+.hero {
+	position: relative;
+	overflow-y: hidden;
+	height: 800px;
+	width:100%;
+	-webkit-transition: all 2s ease-out;
+  -moz-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+
+.fullbg {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	
+}
+
+#splash {
+    position: absolute;
+    width: 100%;
+	height: 100%;
+}
+
+#overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+	height: 100%;
+}
+
+
+/*---- Homepage ---- */
+
+
+body.home {
+	
+}
+
+body.home header {
+	display:none;
+}
+
+
+.front-hero {
+	/*background: url('../../../uploads/2015/08/layered-hero-bg.jpg') top center;
+    background-size: cover; */
+}
+
+#overlay .home {
+	background-image: url('http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/layered-hero-house-small.png');
+	background-position: bottom  center;
+	background-repeat: no-repeat;
+	background-size: 100% !important;
+	
+}
+
+#splash .home {
+	background-image: url('	http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/layered-hero-bg.jpg');
+	background-position: center center;
+}
+
+
+
+.top-blurb .textwidget{
+	max-width: 700px;
+    text-align: justify;
+    text-align-last: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+}
