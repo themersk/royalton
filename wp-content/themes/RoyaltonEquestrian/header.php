@@ -23,7 +23,7 @@
 		<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icons/apple-touch-icon-precomposed.png">
 		
 		<?php wp_head(); ?>
-		<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=EB+Garamond|Montserrat' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/royalton.css">		
 	</head>
 	<body <?php body_class(); ?>>
@@ -49,7 +49,7 @@
 
 	<?php  get_template_part( 'parts/off-canvas-menu' ); ?>
 
-	<?php /* get_template_part( 'parts/top-bar' ); */?>
+	<?php get_template_part( 'parts/top-bar' ); ?>
 
 <section class="container" role="document">
 	<?php do_action( 'foundationpress_after_header' ); ?>

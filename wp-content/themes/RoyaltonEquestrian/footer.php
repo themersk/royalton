@@ -25,7 +25,8 @@
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/skrollr.min.js"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/custom/bucket.js"></script>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/chromeSmoothScroll.min.js"></script>
+<!--<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/chromeSmoothScroll.min.js"></script>-->
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/jMouseWheel-1.0.min.js"></script>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
 </body>
 </html>

@@ -8,16 +8,20 @@
  */
 
 ?>
-<div class="top-bar-container contain-to-grid show-for-medium-up">
+<div class="top-bar-container show-for-medium-up start">
     <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-            <li class="name">
-                <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-            </li>
-        </ul>
-        <section class="top-bar-section">
-            <?php foundationpress_top_bar_l(); ?>
-            <?php foundationpress_top_bar_r(); ?>
-        </section>
-    </nav>
+    	<div class="row">
+        <div class="large-4 columns">
+	            <?php foundationpress_top_bar_l(); ?>
+        </div>	 
+        <div class="large-4 columns">
+  
+	         <a href="<?php echo home_url(); ?>"><div class="title">
+	         </div>
+	        </div>
+        <div clas="large-4 columns">
+	            <?php foundationpress_top_bar_r(); ?> 
+        </div>
+    </div>
+        </nav>
 </div>
