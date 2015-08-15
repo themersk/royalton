@@ -1,22 +1,18 @@
 <?php
-/**
- * The template for displaying pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
- *
- * @package WordPress
- * @subpackage FoundationPress
- * @since FoundationPress 1.0.0
+/*
+ * Template Name: Home Page
+ * Description: Full width homepage
  */
 
 get_header(); ?>
 
 	<div class="hero <?php if ( is_front_page() ) { echo 'front-hero';}?>">
-		<div id="splash" class="<?php if ( is_front_page() ) { echo 'home';}?>"></div>
-	    <div id="overlay"></div>
-	</div>
+	    <div id="splash" class="<?php if ( is_front_page() ) { echo 'home';}?>"></div>
+
+<div id="overlay">
+      <div class="fullbg <?php if ( is_front_page() ) { echo 'home';}?>"></div>
+  </div>
+		</div>
 
 
 

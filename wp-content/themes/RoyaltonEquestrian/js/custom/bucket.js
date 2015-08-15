@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
-skrollr.init()
+/*if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+
+skrollr.init();
+
+}*/
 
 /* --- Hero resize ----*/
 
@@ -9,7 +13,9 @@ $(function(){
         $(window).bind("load resize", function(){
             _winHeight = $(window).height()/100;
             // Setting Height
-            $('.hero').css({'height':_winHeight * 80}); // 50% Height
+            $('.hero.front-hero').css({'height':_winHeight * 80}); // 80% Height
+            $('.hero:not(.front-hero)').css({'height':_winHeight * 70}); // 60% Height
+
         });
     });
     

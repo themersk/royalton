@@ -31,22 +31,35 @@ body {
 	width:100%;
 }
 
+* {
+    -webkit-backface-visibility:inherit;
+}
+
 .row {
 	max-width:100%;
 	font-size: 2.0em;
 }
 
 .section {
-	padding: 5em 5em !important;
+	padding: 0em 0em;
 }
 
 p {
-	font-size:1em;
+	font-size:0.85em;
 }
 
 .section.dark {
 	background: #000;
 	color: #b2b0a2;
+}
+
+.section-hero {
+	padding: 0px !important;
+}
+
+
+.panel-grid {
+	margin-bottom: 0px !important;
 }
 
 .widget-title {
@@ -65,6 +78,7 @@ p {
 	max-width: 500px;
 	
 }
+
 
 
 /* ----- Top Bar --- */
@@ -87,6 +101,7 @@ p {
 	max-width:100%;
 	padding-left: 50px;
 	padding-right: 50px;
+	height: 150px;
 }
 
 .top-bar-container.start {
@@ -102,6 +117,7 @@ p {
 	position:fixed;
 	height: 70px;
 	padding-top: 0px;
+	display: none;
 }
 
 .top-bar li, .top-bar li a {
@@ -112,7 +128,7 @@ p {
 	font-size: 0.8em;
 	margin: 0; 
 	padding: 0;
-	line-height: 90px;
+	line-height: 60px;
 	margin-right: 6px;
 }
 
@@ -120,22 +136,99 @@ p {
 	line-height: 70px;	
 }
 
+.top-bar ul {
+	margin:0;
+	padding: 0;
+}
+
 .top-bar .title {
 	display:block;
 	margin: 0 auto;
 	width: 300px;
-	height: 90px;
-	background-image: url('../assets/img/royaltonfarms-details.png');
+	height: 60px;
+	background-image: url('../assets/img/royaltonfarms-title.png');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100%;
+	/*margin-top: -8px;
+    margin-bottom: -16px;*/
+      position : absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    	-webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
 }
 
-.top-bar-container.sticky .top-bar .title {
-	background-image: url('../assets/img/royaltonfarms-title.png');
-	height: 70px;
 
+
+.top-bar-container.start .top-bar .bar, .top-bar-container-mobile .top-bar .bar{
+	font-family: "Montserrat" sans-serif;
+    color: #000;
+    font-size: 0.6em;
+    text-align: center;
+    display:inline-block;
+	  vertical-align:middle;
+	  overflow:hidden;
 }
+
+.top-bar-container.start .top-bar .bar span, .top-bar-container-mobile .top-bar .bar span{
+	position: relative;  
+}
+
+
+.top-bar-container.start .top-bar .bar span:before,
+.top-bar-container.start .top-bar .bar span:after,
+.top-bar-container-mobile .top-bar .bar span:before,
+.top-bar-container-mobile .top-bar .bar span:after{
+  content: "";
+  position: absolute;
+  /*border-bottom: 1px solid #000;*/
+  border-top: 1px solid #000;
+  width: 2000px;
+  height: 1px;
+  top: 50%;
+}
+.top-bar-container.start .top-bar .bar span:before, .top-bar-container-mobile .top-bar .bar span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.top-bar-container.start .top-bar .bar span:after, .top-bar-container-mobile .top-bar .bar span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.top-bar-container.sticky .top-bar .bar {
+	display:none;
+}
+
+.top-bar .columns {
+padding: 0px;
+}
+
+
+.button.menu-dropdown {
+	float: right;
+    background: transparent;
+    color: #000;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.6em;
+    margin-top: 7px;
+    padding: 0px;
+}
+
+
+.button.menu-dropdown.button::after, .menu-dropdown.button::after {
+    border-color: transparent transparent transparent transparent;
+    display:none;
+}
+
+
 
 
 /*--- Top Slider ---- */
@@ -155,6 +248,13 @@ p {
 	width: 100%;
 	height: 100%;
 	background-size: cover;
+	transform: translateZ(0);-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased; /* seems to do the same in Safari Family of Browsers*/
 	
 }
 
@@ -162,14 +262,38 @@ p {
     position: absolute;
     width: 100%;
 	height: 100%;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+	z-index: -1;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	
 }
+
+
 
 #overlay {
     position: absolute;
     bottom: 0;
     width: 100%;
 	height: 100%;
+	transform: translateZ(0);-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased; /* seems to do the same in Safari Family of Browsers*/
 }
+
+
+
 
 
 /*---- Homepage ---- */
@@ -193,16 +317,19 @@ body.home header {
 	background-image: url('http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/layered-hero-house-small.png');
 	background-position: bottom  center;
 	background-repeat: no-repeat;
-	background-size: 100% !important;
-	
+	background-size: 200%;	
 }
 
-#splash .home {
+#splash.home {
 	background-image: url('	http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/layered-hero-bg.jpg');
 	background-position: center center;
+	background-attachment: fixed;
 }
 
 
+.top-blurb {
+	padding: 5em;
+}
 
 .top-blurb .textwidget{
 	max-width: 700px;
@@ -212,3 +339,132 @@ body.home header {
     margin: 0 auto;
     margin-top: 50px;
 }
+
+
+
+
+
+/*    Equestrian - Front Page       */
+
+
+.front-equestrian #overlay {
+	background-image: url('../assets/img/layered-grandprix-top-small.png');
+	background-position: bottom  center;
+	background-repeat: no-repeat;
+	background-size: 200%;	
+}
+
+.front-equestrian #splash {
+	background-image: url('../assets/img/layered-grandprix-bg.jpg');
+	background-position: center center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    transform: translateZ(0);-webkit-transform: translateZ(0);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Webkit only screens */
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #splash .fullbg{ 
+        background-attachment: inherit;
+    }
+}
+
+
+
+/* Small screens */
+
+@media only screen { 
+	
+	
+} /* Define mobile styles */
+
+@media only screen and (max-width: 40em) {
+	.top-bar-container {
+    	margin-top: 20px;
+    }
+	.top-bar {
+	display:block;
+	padding-left: 20px;
+	padding-right: 20px;
+	height:100%;
+	}
+	.button.menu-dropdown {
+		position: absolute;
+    right: 20px;
+    top: -20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+	}
+
+ } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+/* Medium screens */
+@media only screen and (min-width: 40.063em) {
+	
+	#overlay .home, .front-equestrian #overlay {
+	background-size: 100% !important;	
+	}
+	
+	.top-bar-container.sticky {
+		display:block;
+	}
+	
+	.section {
+    /*padding: 2em 2em !important;*/
+    }
+
+	.button.menu-dropdown.button::after, .menu-dropdown.button::after {
+	    margin-top: -5px;
+	}
+	
+	.top-bar .button {
+		height: 1.75rem;
+    position: relative;
+    top: 0.53125rem;
+}
+	}
+
+
+} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+@media only screen and (min-width: 1024px) and (max-width: 1118px) {
+
+	.top-bar .title {
+	width: 200px;
+	}
+	
+	
+ } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+
+
+/* Large screens */
+@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+/* XLarge screens */
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+/*  XXLarge screens  */
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
