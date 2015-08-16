@@ -45,4 +45,7 @@ require_once( 'library/theme-support.php' );
 /** Add Header image */
 require_once( 'library/custom-header.php' );
 
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
 ?>

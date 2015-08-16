@@ -15,14 +15,16 @@ get_header(); ?>
 
 	<div class="hero <?php if ( is_front_page() ) { echo 'front-hero';}?>">
 		<div id="splash" class="<?php if ( is_front_page() ) { echo 'home';}?>"></div>
-	    <div id="overlay"></div>
+	    <div id="overlay">
+		    <div class="fullbg"></div>
+	    </div>
 	</div>
 
 
 
 
 <div class="row">
-	<div class="small-12 large-12 columns" role="main">
+	<div class="small-12 large-12 columns main-content" role="main">
 
 	<?php do_action( 'foundationpress_before_content' ); ?>
 

@@ -33,24 +33,35 @@ body {
 
 * {
     -webkit-backface-visibility:inherit;
+    position: static;
 }
 
 .row {
 	max-width:100%;
-	font-size: 2.0em;
+	font-size: 1.0em;
 }
 
-.section {
+.row .row {
+	margin: 0px;
+}
+
+.columns {
+	padding: 0px;
+}
+
+section, .main-content {
 	padding: 0em 0em;
+	margin: 0em 0em;
 }
 
 p {
-	font-size:0.85em;
+	font-size:1.6em;
 }
 
-.section.dark {
+.dark {
 	background: #000;
 	color: #b2b0a2;
+	padding: 3em;
 }
 
 .section-hero {
@@ -62,23 +73,54 @@ p {
 	margin-bottom: 0px !important;
 }
 
-.widget-title {
+.section-title {
 	color: #a49042;
 	font-family: "Didot", Georgia, serif;
-	font-size: 1.5em;
+	font-size: 3.0em;
     font-weight: bold;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	border-top: 1px #a49042 solid;
 	border-bottom: 1px #a49042 solid;
 	text-align:center;
 	margin: 0 auto;
 	display: block;
 	width: auto;
 	max-width: 500px;
+	margin-bottom: 1.5em;
 	
 }
 
+.image {
+	background-size: cover;
+	background-position: center center;
+	height: auto;
+}
+
+
+.button {
+    border: 1px solid #a49042;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin: 50px 20px;
+    color: #a49042;
+    }
+
+.button:hover, .button:active {
+	background-color: #a49042;
+	color: #fff;
+	
+}
+
+.button:after {
+    content: "〉";
+    margin-left: 30px;
+    font-size: 1.4em;
+    line-height: 0;
+    position: relative;
+    top: 3px;
+}
 
 
 /* ----- Top Bar --- */
@@ -94,6 +136,7 @@ p {
   transition: all 500ms ease-out;
   width:100%;
   padding-top: 10px;
+  -webkit-transform: translateZ(0);
 }
 
 .top-bar {
@@ -145,7 +188,7 @@ p {
 	display:block;
 	margin: 0 auto;
 	width: 300px;
-	height: 60px;
+	height: 70px;
 	background-image: url('../assets/img/royaltonfarms-title.png');
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -323,15 +366,10 @@ body.home header {
 #splash.home {
 	background-image: url('	http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/layered-hero-bg.jpg');
 	background-position: center center;
-	background-attachment: fixed;
 }
 
 
-.top-blurb {
-	padding: 5em;
-}
-
-.top-blurb .textwidget{
+.top-blurb p {
 	max-width: 700px;
     text-align: justify;
     text-align-last: center;
@@ -341,31 +379,110 @@ body.home header {
 }
 
 
+.subtitle {
+	color: #a49042;
+	font-family: "Montserrat" sans-serif;
+    font-size: 0.6em;
+    text-align: center;
+    display:block;
+	  vertical-align:middle;
+	  overflow:hidden;
+	  text-transform: uppercase;
+	  width:100%;
+	  max-width: 500px;
+	  position:relative;
+	  margin: 0 auto;
+}
+
+.subtitle span:before, .subtitle span:after{
+  content: "";
+  position: absolute;
+  /*border-bottom: 1px solid #000;*/
+  border-top: 1px solid #a49042;
+  width: 2000px;
+  height: 1px;
+  top: 50%;
+}
+
+.subtitle span {
+position:relative;
+}
+
+.subtitle span:before, .subtitle span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.subtitle span:after, .subtitle span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+
+
+.section-content {
+	/*padding: 5em;*/
+}
+
+.section-content .block {
+   /* position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);*/
+    width: 100%;
+    height: 100%;
+    display: table;
+    text-align: center;
+}
+
+.block-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.block-content p {
+    text-align: justify;
+    text-align-last: center;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.block-content .section-title, .block-content .subtitle {
+max-width: 400px;
+}
+
+
 
 
 
 /*    Equestrian - Front Page       */
 
 
-.front-equestrian #overlay {
+.front-equestrian .overlay {
 	background-image: url('../assets/img/layered-grandprix-top-small.png');
 	background-position: bottom  center;
 	background-repeat: no-repeat;
 	background-size: 200%;	
+	height: 100%;
+	width: 100%;
+	position: absolute;
+    top: 0;
 }
 
-.front-equestrian #splash {
+.front-equestrian {
 	background-image: url('../assets/img/layered-grandprix-bg.jpg');
 	background-position: center center;
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
     transform: translateZ(0);-webkit-transform: translateZ(0);
-    
 }
 
 
-
+.video img {
+	width:100%;
+}
 
 
 
@@ -376,7 +493,7 @@ body.home header {
 
 
 /* Webkit only screens */
-
+/*
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     #splash .fullbg{ 
@@ -384,7 +501,12 @@ body.home header {
     }
 }
 
-
+.off-canvas-wrap, .inner-wrap {
+    @media (min-width: 768px) {
+        -webkit-backface-visibility: visible; 
+    }
+}
+*/
 
 /* Small screens */
 
@@ -417,7 +539,7 @@ body.home header {
 /* Medium screens */
 @media only screen and (min-width: 40.063em) {
 	
-	#overlay .home, .front-equestrian #overlay {
+	#overlay .home, .front-equestrian .overlay {
 	background-size: 100% !important;	
 	}
 	
@@ -457,7 +579,20 @@ body.home header {
 
 
 /* Large screens */
-@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) {
+	
+	p {
+		font-size:2.0em;
+	}
+	
+	.top-blurb {
+	    padding: 7em;
+	    }
+	
+	
+	
+	
+} /* min-width 1025px, large screens */
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
 
