@@ -28,11 +28,13 @@ if(/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())){
  
  /* ----- sticky header -----*/
  
-    
-$(window).scroll(function(){ 
-	if ($(window).scrollTop() > 100) {
+
+$('.inner-inner-wrap').scroll(function(){ 
+var position = $(".container").offset().top;
+	console.log(position);
+	if (position <= -100) {
 	$('.top-bar-container').removeClass('start').addClass('sticky');
-	} else if ($(window).scrollTop() < 100) {
+	} else if (position > -100) {
 	$('.top-bar-container').removeClass('sticky').addClass('start');
 	}
 });    

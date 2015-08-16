@@ -22,6 +22,7 @@
 	<?php do_action( 'foundationpress_layout_end' ); ?>
 	</div>
 </div>
+</div>
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/custom/bucket.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/jMouseWheel-1.0.min.js"></script>
