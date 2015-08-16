@@ -6,7 +6,7 @@
 get_header(); ?>
 
 	<div class="hero <?php if ( is_front_page() ) { echo 'front-hero';}?>">
-	    <div id="splash" class="<?php if ( is_front_page() ) { echo 'home';}?>"></div>
+	    <div id="splash" class="splash <?php if ( is_front_page() ) { echo 'home';}?>"></div>
 
 <div id="overlay">
       <div class="fullbg <?php if ( is_front_page() ) { echo 'home';}?>"></div>

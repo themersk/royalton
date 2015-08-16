@@ -36,10 +36,13 @@ body {
     position: static;
 }
 
+    
 .inner-inner-wrap {
   overflow: scroll;
   max-height: 102vh;
   min-width: 102%;
+    overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
 }
 
 .row {
@@ -280,10 +283,36 @@ padding: 0px;
 
 
 #menu-off-canvas {
-position:fixed;
-top:0;
+width:100%;
 }
 
+.right-off-canvas-menu {
+background: #fff;
+}
+
+
+ul.off-canvas-list li a{
+color: #a49042;
+    padding-left: 30px;
+    border-bottom: 1px solid rgba(38, 38, 38, 0.07);
+}
+
+ul.off-canvas-list li a:hover {
+background: rgba(38,38,38,0.04);
+
+}
+
+ul.off-canvas-list li a:hover:after{
+    content: "〉";
+    float:right;
+    margin-right: 30px;
+    font-size: 1.4em;
+    line-height:inherit;
+    position:relative;
+    top:-5px;
+}
+
+.move-right .exit-off-canvas, .move-left .exit-off-canvas { box-shadow: 1px 0px 30px rgba(0, 0, 0, 0.41); }
 
 
 /*--- Top Slider ---- */
@@ -537,8 +566,15 @@ display:block;
 } /* Define mobile styles */
 
 @media only screen and (max-width: 40em) {
+/*
+	.inner-inner-wrap {
+	overflow: auto;
+    max-height: none;
+    }
+  */  
 	.top-bar-container {
-    	margin-top: 20px;
+    	margin-top: 50px;
+    	position: absolute;
     }
 	.top-bar {
 	display:block;
@@ -547,12 +583,19 @@ display:block;
 	height:100%;
 	}
 	.button.menu-dropdown {
-		position: absolute;
-    right: 20px;
-    top: -20px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #000;
+	position: fixed;
+    right: -20px;
+    top:-20px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index:2000;
+    font-size:1.6em;
+	}
+	
+	 .hero, #splash {
+		background-size:cover;
+		background-attachment:scroll;
 	}
 
  } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
@@ -580,7 +623,6 @@ display:block;
 		height: 1.75rem;
     position: relative;
     top: 0.53125rem;
-}
 	}
 
 

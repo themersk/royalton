@@ -13,6 +13,7 @@ $(function(){
         $(window).bind("load resize", function(){
             _winHeight = $(window).height()/100;
             // Setting Height
+            splashHeight = _winHeight * 80;
             $('.hero.front-hero').css({'height':_winHeight * 80}); // 80% Height
             $('.hero:not(.front-hero)').css({'height':_winHeight * 70}); // 60% Height
 

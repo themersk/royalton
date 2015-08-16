@@ -8,10 +8,13 @@
  */
 
 ?>
-<div class="top-bar-container start">
-    	<div class="hide-for-medium-up"> 
+
+<div class="hide-for-medium-up"> 
     	<button href="#" class="button dropdown menu-dropdown right-off-canvas-toggle">Menu</button>
     	</div>
+    	
+    	
+<div class="top-bar-container start">
     <nav class="top-bar show-for-small-up" data-topbar role="navigation">
     	<div class="row">
     	<div class="small-12 columns bar"><span>EST. MMXIV</span></div>
