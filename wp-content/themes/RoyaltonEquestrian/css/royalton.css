@@ -29,6 +29,7 @@ body {
 	background: #fff;
 	height:100%;
 	width:100%;
+	overflow:hidden;
 }
 
 * {
@@ -40,8 +41,8 @@ body {
 .inner-inner-wrap {
   overflow: scroll;
   max-height: 102vh;
-  min-width: 102%;
-    overflow-y: scroll; /* has to be scroll, not auto */
+  min-width: 100%;
+  overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
 }
 
@@ -112,7 +113,7 @@ p {
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     font-size: 1.2em;
-    margin: 50px 20px;
+    margin: 50px 20px 0px 20px;
     color: #a49042;
     }
 
@@ -131,13 +132,34 @@ p {
     top: 3px;
 }
 
+a {
+	color: #a49042;
+}
+
+a:hover {
+	color: #000;
+}
+
+.inner-inner-wrap::-webkit-scrollbar {
+    width: 1em;
+    z-index:3000;
+}
+ 
+.inner-inner-wrap::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.inner-inner-wrap::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 
 /* ----- Top Bar --- */
 
 
 .top-bar-container {
 	margin: 0;
-	position: fixed;
+	position: absolute;
     z-index: 1000;
 	-webkit-transition: all 500ms ease-out;
   -moz-transition: all 500ms ease-out;
@@ -166,7 +188,6 @@ p {
 	background: #fff;
 	box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);
 	margin: 0;
-	position:fixed;
 	height: 70px;
 	padding-top: 0px;
 	display: none;
@@ -312,7 +333,10 @@ ul.off-canvas-list li a:hover:after{
     top:-5px;
 }
 
-.move-right .exit-off-canvas, .move-left .exit-off-canvas { box-shadow: 1px 0px 30px rgba(0, 0, 0, 0.41); }
+.move-right .exit-off-canvas, .move-left .exit-off-canvas { 
+box-shadow: 1px 0px 30px rgba(0, 0, 0, 0.41);
+-webkit-box-shadow: 1px 0px 30px rgba(0, 0, 0, 0.41);
+border-radius: 1px; }
 
 
 /*--- Top Slider ---- */
@@ -469,7 +493,7 @@ position:relative;
     height: 100%;
     display: table;
     text-align: center;
-    padding: 20px;
+    padding: 80px;
 }
 
 .block-content {
@@ -530,13 +554,17 @@ margin-left: auto;
 margin-right: auto;
 left: 0;
 right: 0;
+height: 100px;
+    top: 20%;
+    transform: translateY(-25%);
  }
 
 .video-overlay img {
-width:70px;
+width:100px;
 margin-bottom:20px;
-display:block;
+display:inline-block;
 }
+
 
 
 
@@ -596,6 +624,19 @@ display:block;
 	 .hero, #splash {
 		background-size:cover;
 		background-attachment:scroll;
+	}
+	
+	.right-off-canvas-menu{ 
+box-shadow: inset 1px 0px 30px rgba(0, 0, 0, 0.41);
+-webkit-box-shadow:inset 1px 0px 30px rgba(0, 0, 0, 0.41);
+}
+
+	.subtitle, .top-bar-container.start .top-bar .bar, .top-bar-container-mobile .top-bar .bar{
+		font-size: 1.0em;
+	}
+	
+	.block {
+		padding: 20px;
 	}
 
  } /* max-width 640px, mobile-only styles, use when QAing mobile issues */

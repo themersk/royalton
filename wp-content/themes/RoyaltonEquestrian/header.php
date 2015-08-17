@@ -31,12 +31,13 @@
 	
 	<div class="off-canvas-wrap" data-offcanvas>
 	<div class="inner-wrap">
-	
+
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
 	<?php  get_template_part( 'parts/off-canvas-menu' ); ?>
 
 	<?php get_template_part( 'parts/top-bar' ); ?>
-	<div class="inner-inner-wrap">
+			<div class="inner-inner-wrap">
+
 <section class="container" role="document">
 	<?php do_action( 'foundationpress_after_header' ); ?>

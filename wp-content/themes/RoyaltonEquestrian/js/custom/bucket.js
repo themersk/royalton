@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-/*if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+var ismobile = false;
 
-skrollr.init();
-
-}*/
+if( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+		ismobile = true;
+}
 
 /* --- Hero resize ----*/
 
@@ -22,7 +22,7 @@ $(function(){
     
  
  
-if(/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())){
+if((/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ){
 	$('.hero, #splash').css({'background-attachment' : 'scroll'});
 }
  
@@ -32,13 +32,20 @@ if(/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())){
 
 $('.inner-inner-wrap').scroll(function(){ 
 var position = $(".container").offset().top;
-	console.log(position);
 	if (position <= -100) {
 	$('.top-bar-container').removeClass('start').addClass('sticky');
 	} else if (position > -100) {
 	$('.top-bar-container').removeClass('sticky').addClass('start');
 	}
+	
+	if( !(ismobile)) {
+	
+	$('.top-bar-container.sticky').css({'width' : 'calc(100% - 1em)'});
+	}
+	
+
 });    
+
     
    
 /* --- Images to background images --- */
