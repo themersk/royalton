@@ -17,6 +17,17 @@
 }
 
 
+@font-face {
+    font-family: 'socicon';
+    src: url('../../fonts/socicon-webfont.eot');
+    src: url('../../fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/socicon-webfont.woff') format('woff'),
+         url('../../fonts/socicon-webfont.ttf') format('truetype'),
+         url('../../fonts/socicon-webfont.svg#sociconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {	
 	height:100%;
 	width:100%;
@@ -33,7 +44,7 @@ body {
 }
 
 * {
-    -webkit-backface-visibility:inherit;
+    -webkit-backface-visibility:visible;
     position: static;
 }
 
@@ -73,6 +84,15 @@ p {
 	color: #b2b0a2;
 	padding: 3em;
 }
+
+section.dark {
+	padding:0px;
+}
+
+.tall {
+	height: 100% !important;
+}
+
 
 .section-hero {
 	padding: 0px !important;
@@ -239,7 +259,7 @@ a:hover {
 
 
 
-.top-bar-container.start .top-bar .bar, .top-bar-container-mobile .top-bar .bar{
+.top-bar-container.start .top-bar .bar, .top-bar-container-mobile .top-bar .bar, footer .footer-content .bar{
 	font-family: "Montserrat" sans-serif;
     color: #000;
     font-size: 0.6em;
@@ -249,15 +269,16 @@ a:hover {
 	  overflow:hidden;
 }
 
-.top-bar-container.start .top-bar .bar span, .top-bar-container-mobile .top-bar .bar span{
-	position: relative;  
+.top-bar-container.start .top-bar .bar span, .top-bar-container-mobile .top-bar .bar span, footer .bar span{
+	position: relative !important;  
 }
 
 
 .top-bar-container.start .top-bar .bar span:before,
 .top-bar-container.start .top-bar .bar span:after,
 .top-bar-container-mobile .top-bar .bar span:before,
-.top-bar-container-mobile .top-bar .bar span:after{
+.top-bar-container-mobile .top-bar .bar span:after,
+footer .footer-content .bar span:before, footer .footer-content .bar span:after{
   content: "";
   position: absolute;
   /*border-bottom: 1px solid #000;*/
@@ -266,11 +287,12 @@ a:hover {
   height: 1px;
   top: 50%;
 }
-.top-bar-container.start .top-bar .bar span:before, .top-bar-container-mobile .top-bar .bar span:before {
+
+.top-bar-container.start .top-bar .bar span:before, .top-bar-container-mobile .top-bar .bar span:before, footer .footer-content .bar span:before{
   right: 100%;
   margin-right: 15px;
 }
-.top-bar-container.start .top-bar .bar span:after, .top-bar-container-mobile .top-bar .bar span:after {
+.top-bar-container.start .top-bar .bar span:after, .top-bar-container-mobile .top-bar .bar span:after, footer .footer-content .bar span:after{
   left: 100%;
   margin-left: 15px;
 }
@@ -428,11 +450,14 @@ body.home header {
 	background-size: 200%;	
 }
 
-#splash.home {
+#splash .home {
 	background-image: url('	http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/layered-hero-bg.jpg');
 	background-position: center center;
 }
 
+.top-blurb.dark {
+	padding: 7em;
+} 
 
 .top-blurb p {
 	max-width: 700px;
@@ -447,7 +472,7 @@ body.home header {
 .subtitle {
 	color: #a49042;
 	font-family: "Montserrat" sans-serif;
-    font-size: 0.6em;
+    font-size: 1.2em;
     text-align: center;
     display:block;
 	  vertical-align:middle;
@@ -457,6 +482,7 @@ body.home header {
 	  max-width: 500px;
 	  position:relative;
 	  margin: 0 auto;
+	  margin-top:-5px;
 }
 
 .subtitle span:before, .subtitle span:after{
@@ -516,7 +542,7 @@ max-width: 400px;
 
 
 
-/*    Equestrian - Front Page       */
+/*    Front Page Styles       */
 
 
 .front-equestrian .overlay {
@@ -555,15 +581,294 @@ margin-right: auto;
 left: 0;
 right: 0;
 height: 100px;
-    top: 20%;
+    top: 22%;
     transform: translateY(-25%);
+     -webkit-transform: translateY(-25%);
+ -ms-transform: translateY(-25%);
  }
 
 .video-overlay img {
 width:100px;
 margin-bottom:20px;
 display:inline-block;
+	-webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
 }
+
+.video:hover .video-overlay{
+	color: #a49042;
+}
+
+.video:hover ~ .video-overlay img{
+transform: scale(1.1);
+ -webkit-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+}
+
+
+.front-estate {
+	background-image:url('../assets/img/estate-hero-stretched.jpg');
+	background-size: cover;
+}
+
+
+
+.front-estates {
+	background-image:url('../assets/img/estates.jpg');
+	background-size: cover;
+	padding:15em;
+	text-align:center;
+}
+
+
+.front-estates .block {
+	display:inline-block;
+	background-color: #fff;
+	padding:30px;
+}
+
+
+.front-news .row{
+	padding:5em 15em;
+}
+
+
+
+
+
+
+
+
+/*---- Footer Content -----*/
+
+
+
+footer {
+	padding: 30px;
+	margin-top: 0px;
+    padding-top: 0px;
+}
+
+footer.row {
+	padding-top:20px;
+}
+
+.sponsor h4 {
+	font-family:"EB Garamond", serif;
+	color: #8b887b;
+	text-align:center;
+}
+
+.sponsor ul {
+	display:block;
+	margin: 0 auto;
+	text-align:center;
+}
+.sponsor li {
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #8b887b;
+    padding: 20px;
+    width: 80px;
+    margin: 30px;
+    height: 80px;
+}
+
+.footer-content {
+	    border-top: 1px solid #000;
+    padding-top: 3em;
+    /* padding-bottom: 3em; */
+    /* border-bottom: 1px solid #000; */
+    margin-bottom: 10em;
+}
+
+.footer-content span {
+	font-size: 1.8em;
+	display:block;
+	line-height:2.5em;
+}
+
+
+.footer-content .columns span:before{
+    content: '';
+    display: inline-block;
+    width: 26px;
+    background-size: 100%;
+    float: left;
+    margin: 0px 20px 0px 0px;
+    height: 2.5em;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.footer-content span.email:before{
+    background-image: url('../assets/img/email.png');
+}
+
+
+.footer-content span.phone:before{
+    background-image: url('../assets/img/phone.png');
+    width: 20px;
+    margin: 0px 23px 0px 3px;
+
+}
+
+
+.footer-content span.address:before{
+    background-image: url('../assets/img/pin.png');
+    width: 20px;
+    margin: 0px 23px 0px 3px;
+}
+
+.footer-content span.address2 {
+	line-height:0em;
+}
+
+.footer-content ul li {
+	list-style:none;
+	line-height: 2em;
+
+}
+
+li.head {
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.6em;
+    color: #a49042;
+    margin-bottom:10px;
+    }
+
+.sitemap {
+	padding-top: 14px;
+}
+
+
+span.socicon {
+    font-family: 'socicon' !important;
+    display: inline-block;
+    	-webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+ }
+ 
+ .socicon:hover {
+	 color: #000;
+ }
+ 
+ .twitter {
+	 color:#4099ff;
+ }
+ span.twitter:before {
+	 width:0px;
+	 margin:0px 6px 0px 0px;
+	 padding:0px;
+ }
+ 
+ .facebook {
+	 color: #3b5998;
+ }
+ .instagram {
+	 color: #517fa4;
+ }
+ .vimeo {
+	 color: #aad450;
+ }
+ .google {
+	 color: #dd4b39;
+ }
+
+footer .bar {
+	width:100%;
+	margin-top:30px;
+}
+
+footer .bar span {
+	display:inline-block;
+}
+
+footer .bar span img {
+max-width: 200px;
+}
+
+
+
+
+
+/* ------ Interior Pages ------- */
+
+.hero.Equestrian {
+	background-image: url('../assets/img/equestrian-hero.jpg');
+	background-size:cover;
+	background-position: center center;
+}
+
+
+hr.baby {
+	border: 1px #a49042 solid;
+	margin: 5em auto 5em auto;
+	width: 30px;
+}
+
+.subnav {
+	display:block;
+	max-width:600px;
+	margin: 0 auto;
+}
+
+.subnav li {
+	height:100px;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position:center center;
+	  -webkit-transition: all 200ms ease-out;
+  -moz-transition: all 200ms ease-out;
+  -o-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.subnav li:hover {
+	transform: scale(1.1);
+ -webkit-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+}
+
+.subnav li.amenities {
+	background-image: url('../assets/img/amenities.jpg');
+}
+
+.subnav li.boarding {
+	background-image: url('../assets/img/boarding.jpg');
+}
+
+.subnav li.trainers {
+	background-image: url('../assets/img/trainers.jpg');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

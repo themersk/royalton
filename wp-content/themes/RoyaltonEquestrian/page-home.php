@@ -5,12 +5,14 @@
  */
 get_header(); ?>
 
-	<div class="hero <?php if ( is_front_page() ) { echo 'front-hero';}?>">
-	    <div id="splash" class="splash <?php if ( is_front_page() ) { echo 'home';}?>"></div>
+	<div class="main-hero hero <?php if ( is_front_page() ) { echo 'front-hero';}?>">
+	    <div id="splash" class="splash <?php if ( is_front_page() ) { echo 'home';}?>">
+	    	<div class="fullbg <?php if ( is_front_page() ) { echo 'home';}?>"></div>
+	    </div>
 
-<div id="overlay">
-      <div class="fullbg <?php if ( is_front_page() ) { echo 'home';}?>"></div>
-  </div>
+		<div id="overlay">
+		      <div class="fullbg <?php if ( is_front_page() ) { echo 'home';}?>"></div>
+		  </div>
 		</div>
 
 
