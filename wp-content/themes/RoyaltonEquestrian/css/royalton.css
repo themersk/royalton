@@ -120,6 +120,14 @@ section.dark {
 	
 }
 
+.feature-title, .video-overlay .block-content{
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: #a49042;
+    margin: 20px;
+}
+
 .image {
 	background-size: cover;
 	background-position: center center;
@@ -186,7 +194,7 @@ a:hover {
   -o-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
   width:100%;
-  padding-top: 10px;
+  /*padding-top: 10px;*/
   -webkit-transform: translateZ(0);
 }
 
@@ -514,7 +522,7 @@ position:relative;
 	/*padding: 5em;*/
 }
 
-.section-content .block {
+.block {
     width: 100%;
     height: 100%;
     display: table;
@@ -570,43 +578,6 @@ max-width: 400px;
 	width:100%;
 }
 
-.video-overlay {
-    width: 150px;
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    position: absolute;
-margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
-height: 100px;
-    top: 22%;
-    transform: translateY(-25%);
-     -webkit-transform: translateY(-25%);
- -ms-transform: translateY(-25%);
- }
-
-.video-overlay img {
-width:100px;
-margin-bottom:20px;
-display:inline-block;
-	-webkit-transition: all 500ms ease-out;
-  -moz-transition: all 500ms ease-out;
-  -o-transition: all 500ms ease-out;
-  transition: all 500ms ease-out;
-}
-
-.video:hover .video-overlay{
-	color: #a49042;
-}
-
-.video:hover ~ .video-overlay img{
-transform: scale(1.1);
- -webkit-transform: scale(1.1);
- -ms-transform: scale(1.1);
-}
-
 
 .front-estate {
 	background-image:url('../assets/img/estate-hero-stretched.jpg');
@@ -626,7 +597,8 @@ transform: scale(1.1);
 .front-estates .block {
 	display:inline-block;
 	background-color: #fff;
-	padding:30px;
+    padding: 50px;
+    width: auto;
 }
 
 
@@ -665,6 +637,7 @@ footer.row {
 	display:block;
 	margin: 0 auto;
 	text-align:center;
+	margin-bottom: 30px;
 }
 .sponsor li {
     display: inline-block;
@@ -802,16 +775,49 @@ max-width: 200px;
 /* ------ Interior Pages ------- */
 
 .hero.Equestrian {
-	background-image: url('../assets/img/equestrian-hero.jpg');
+	background-image: url('../assets/img/tackroom-stretched.jpg');
 	background-size:cover;
 	background-position: center center;
 }
 
+.hero.Estate {
+	background-image: url('../assets/img/estate-far.jpg');
+	background-size:100% auto;
+	background-position: top center;
+}
+
+.hero.boarding {
+	background-image: url('http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/horse-1024x682.jpg');
+	background-size:cover;
+	background-position: top 80% center;
+}
+
+.hero.trainers {
+	background-image: url('http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/DSC2201-1024x576.jpg');
+		background-size:cover;
+	background-position: center center;
+}
+
+.hero.Estates {
+	background-image:url('../assets/img/estates.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+
+.hero.Blood {
+	background-image:url('../assets/img/horse-head.jpg');
+	background-size: cover;
+	background-position: center center;
+}
 
 hr.baby {
 	border: 1px #a49042 solid;
 	margin: 5em auto 5em auto;
 	width: 30px;
+}
+
+.section-title.solo {
+	    border-top: 1px #a49042 solid;
 }
 
 .subnav {
@@ -849,13 +855,74 @@ hr.baby {
 	background-image: url('../assets/img/trainers.jpg');
 }
 
+.subnav li.amenities1 {
+	background-image: url('../assets/img/amenities1.jpg');
+}
+
+.subnav li.events {
+	background-image: url('../assets/img/events.jpg');
+}
+
+.subnav a {
+	
+}
 
 
+.images-section .holder{
+	float: none;
+	margin: 0 auto;
+	padding: 10px;
+	
+}
 
+.images-section .holder .image {
+	border: 10px solid #fff;
+}
 
+.video-overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	
+  background: -webkit-linear-gradient(120deg, rgba(38,17,37,0.8) 10%, rgba(0,52,57,0.8) 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(120deg, rgba(38,17,37,0.8) 10%, rgba(0,52,57,0.8) 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(120deg, rgba(38,17,37,0.8) 10%, rgba(0,52,57,0.8) 90%); /* IE10 */
+  background:      -o-linear-gradient(120deg, rgba(38,17,37,0.8) 10%, rgba(0,52,57,0.8) 90%); /* Opera 11.10+ */
+  background:         linear-gradient(120deg, rgba(38,17,37,0.8) 10%, rgba(0,52,57,0.8) 90%); /* W3C */
+     
+   -webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;   
+}
 
+.video-overlay .block-content{
+		-webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
 
+.video-overlay img {
+	width:126px;
+	display:inline-block;
+	-webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
 
+.video:hover .video-overlay{
+	color: #a49042;
+}
+
+.video-overlay:hover .block-content{
+transform: scale(1.1);
+ -webkit-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+}
 
 
 

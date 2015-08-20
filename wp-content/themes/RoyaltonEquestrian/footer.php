@@ -96,7 +96,7 @@
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/custom/bucket.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/jMouseWheel-1.0.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/vide.js"></script>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
 
   <script>

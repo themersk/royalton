@@ -34,7 +34,8 @@ $(function(){
             // Setting Height
             splashHeight = _winHeight * 80;
             $('.hero.main-hero').css({'height':_winHeight * 80}); // 80% Height
-            $('.hero:not(.front-hero)').css({'height':_winHeight * 70}); // 60% Height
+            $('.hero:not(.main-hero)').css({'height':_winHeight * 70}); // 60% Height
+            $('.hero.images-section').css({'height':_winHeight * 100}); // 80% Height
 
         });
     });
@@ -78,6 +79,17 @@ $(this).find("img:first").remove();
 });
     
     
+    
+
+/* --- Smooth scrolling to anchor tags ----- */
+
+
+
+  $(".subnav li").click(function(event) {
+    event.preventDefault();
+    $('.inner-inner-wrap').animate( { scrollTop:$(this.hash).offset().top } , 1000);
+    } );
+
     
 
     
