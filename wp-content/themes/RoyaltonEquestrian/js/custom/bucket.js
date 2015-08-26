@@ -47,10 +47,12 @@ if((/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())) || ismobile ){
 }
  
  
- /* ----- sticky header -----*/
+ /* ----- SCROLL FUNCTIONS -----*/
  
 
 $('.inner-inner-wrap').scroll(function(){ 
+
+ /* ----- sticky header -----*/
 var position = $(".container").offset().top;
 	if (position <= -100) {
 	$('.top-bar-container').removeClass('start').addClass('sticky');
@@ -58,39 +60,95 @@ var position = $(".container").offset().top;
 	$('.top-bar-container').removeClass('sticky').addClass('start');
 	}
 	
-	if( !(ismobile)) {
+ /* ----- sticky subnav -----*/
+var subnavposition = $(".subnav-bar").offset().top;
+console.log(subnavposition) ;
+	if (subnavposition <= 100) {
+		$('.subnav-bar').addClass('sticky');
+		$('.top-bar-container.sticky').css({'box-shadow' : 'none'});
+	}
+	if ($(".grandprix-section").offset().top > 100) {
+		$('.subnav-bar').removeClass('sticky');
+		$('.top-bar-container.sticky').css({'box-shadow' : '0px 4px 2px rgba(0, 0, 0, 0.3);'});
+	}
 	
+	
+ /* ----- subnav highlighting -----*/
+ 
+ 
+
+ /* ----- scrollbar width accomodation  -----*/	
+	
+	if( !(ismobile)) {
+	$('.subnav-bar.sticky').css({'width' : 'calc(100% - 1em)'});
 	$('.top-bar-container.sticky').css({'width' : 'calc(100% - 1em)'});
 	}
 	
-
+	
 });    
 
     
    
 /* --- Images to background images --- */
 
+
 $('.image').each(function() {
 
-$(this).css('background-image', 'url('+ $(this).find("img:first").attr("src") +')');
-$(this).find("img:first").remove();
-
+      
+$(this).css('background-image', 'url('+ $(this).attr("data-original") +')');
+$(this).lazyload({ effect : "fadeIn"  });  
 
 });
-    
+  
     
     
 
 /* --- Smooth scrolling to anchor tags ----- */
 
-
-
-  $(".subnav li").click(function(event) {
-    event.preventDefault();
-    $('.inner-inner-wrap').animate( { scrollTop:$(this.hash).offset().top } , 1000);
-    } );
+    
+      // scroll handler
+  var scrollToAnchor = function( id ) {
+ 
+    // grab the element to scroll to based on the name
+    var elem = $("a[name='"+ id +"']");
+ 
+    // if that didn't work, look for an element with our ID
+    if ( typeof( elem.offset() ) === "undefined" ) {
+      elem = $("#"+id);
+    }
+ 
+    // if the destination element exists
+    if ( typeof( elem.offset() ) !== "undefined" ) {
+ 
+      // do the scroll
+      $('.inner-inner-wrap').animate({
+              scrollTop: elem.offset().top + ($(window).height() * 0.75)
+      }, 1000 );
+ 
+    }
+  };
+ 
+  // bind to click event
+  $("ul.subnav li, ul.subnav-bar li").click(function( event ) {
+ 
+    // only do this if it's an anchor link
+ 
+      // cancel default event propagation
+      event.preventDefault();
+ 
+      // scroll to the location
+      var href = $(this).attr('class').replace('#', '')
+      scrollToAnchor( href );
+      console.log(href);
+ 
+  });
+ 
 
     
+/* ------ is elementvisible? ----- */
+
+
+
 
     
 });

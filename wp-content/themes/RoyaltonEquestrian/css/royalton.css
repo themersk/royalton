@@ -31,6 +31,7 @@
 html {	
 	height:100%;
 	width:100%;
+	overflow:hidden;
 	}
 	
 body {
@@ -50,9 +51,9 @@ body {
 
     
 .inner-inner-wrap {
-  overflow: scroll;
   max-height: 102vh;
   min-width: 100%;
+  overflow-x: hidden;
   overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
 }
@@ -582,6 +583,7 @@ max-width: 400px;
 .front-estate {
 	background-image:url('../assets/img/estate-hero-stretched.jpg');
 	background-size: cover;
+	background-position: center center;
 }
 
 
@@ -774,6 +776,10 @@ max-width: 200px;
 
 /* ------ Interior Pages ------- */
 
+.hero {
+	background-repeat: no-repeat;
+}
+
 .hero.Equestrian {
 	background-image: url('../assets/img/tackroom-stretched.jpg');
 	background-size:cover;
@@ -806,6 +812,12 @@ max-width: 200px;
 
 .hero.Blood {
 	background-image:url('../assets/img/horse-head.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+
+.hero.events {
+	background-image:url('../assets/img/event-hero.jpg');
 	background-size: cover;
 	background-position: center center;
 }
@@ -865,6 +877,35 @@ hr.baby {
 
 .subnav a {
 	
+}
+
+.subnav-bar {
+	height: 35px;
+    overflow: hidden;
+    border-bottom: 1px solid #a49042;
+    background: #fff;
+}
+
+.subnav-bar.sticky {
+	position:fixed;
+	top:100px;
+	width: 100%;
+	box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);
+	z-index:2000;
+}
+
+.subnav-bar li {
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: .7em;
+    color: #000;
+    margin-top:10px;
+}
+
+.subnav-bar li:active {
+	background-color: #a49042;
+	color: #fff;
 }
 
 
