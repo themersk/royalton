@@ -10,20 +10,20 @@
 
 @font-face{ 
 	font-family: 'Didot';
-	src: url('../../fonts/didot.eot');
-	src: url('../../fonts/didot.eot?#iefix') format('embedded-opentype'),
-	     url('../../fonts/didot.woff') format('woff'),
-	     url('../../fonts/didot.ttf') format('truetype'),
+	src: url('../fonts/didot.eot');
+	src: url('../fonts/didot.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/didot.woff') format('woff'),
+	     url('../fonts/didot.ttf') format('truetype'),
 }
 
 
 @font-face {
     font-family: 'socicon';
-    src: url('../../fonts/socicon-webfont.eot');
-    src: url('../../fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../../fonts/socicon-webfont.woff') format('woff'),
-         url('../../fonts/socicon-webfont.ttf') format('truetype'),
-         url('../../fonts/socicon-webfont.svg#sociconregular') format('svg');
+    src: url('../fonts/socicon-webfont.eot');
+    src: url('../fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/socicon-webfont.woff') format('woff'),
+         url('../fonts/socicon-webfont.ttf') format('truetype'),
+         url('../fonts/socicon-webfont.svg#sociconregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -62,7 +62,6 @@ body {
 	max-width:100%;
 	font-size: 1.0em;
 }
-
 .row .row {
 	margin: 0px;
 }
@@ -127,6 +126,7 @@ section.dark {
     font-size: 1.2em;
     color: #a49042;
     margin: 20px;
+    text-align:center;
 }
 
 .image {
@@ -145,8 +145,9 @@ section.dark {
     margin: 50px 20px 0px 20px;
     color: #a49042;
     }
+    
 
-.button:hover, .button:active {
+.button:hover, .button:active, input[type="submit"]:hover, input[type="submit"]:active{
 	background-color: #a49042;
 	color: #fff;
 	
@@ -165,8 +166,16 @@ a {
 	color: #a49042;
 }
 
-a:hover {
+.block-content p a {
+	text-decoration: underline;
+}
+
+a:hover, a:active{
 	color: #000;
+}
+
+.dark a:hover, .dark a:active{
+	color: #fff;
 }
 
 .inner-inner-wrap::-webkit-scrollbar {
@@ -181,6 +190,45 @@ a:hover {
 .inner-inner-wrap::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+
+/* contact form stuff */
+
+input[type="submit"], .wpcf7-submit {
+    border: 1px solid #a49042;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #a49042;
+    padding: 10px 20px;\
+    }
+    
+img.ajax-loader {
+	width: auto !important;
+}
+
+div.wpcf7-response-output {
+    margin: 2em 0.5em 1em;
+    padding: 0.2em 1em;
+    font-size: 1.5em;
+    margin: 50px auto;
+    max-width: 700px;
+    }
+    
+.wpcf7 .block-content p {
+	max-width: none;
+	text-align: left;
+    text-align-last: left;
+}
+
+.wpcf7 .row {
+	max-width: 900px;
+    margin: 0 auto;
+}
+
+.wpcf7 .columns {
+	    padding: 0px 20px;
 }
 
 /* ----- Top Bar --- */
@@ -375,7 +423,7 @@ border-radius: 1px; }
 .hero {
 	position: relative;
 	overflow-y: hidden;
-	height: 800px;
+	height: 600px;
 	width:100%;
 	-webkit-transition: all 500ms ease-out;
   -moz-transition: all 500ms ease-out;
@@ -411,7 +459,6 @@ border-radius: 1px; }
     -webkit-font-smoothing: antialiased;
 	z-index: -1;
 	background-size: 100% 100%;
-	background-attachment: fixed;
 	
 }
 
@@ -453,7 +500,7 @@ body.home header {
 }
 
 #overlay .home {
-	background-image: url('http://royaltonequestrian.com/develop/royalton/wp-content/uploads/2015/08/layered-hero-house-small.png');
+	background-image: url('../assets/img/layered-hero-house-small.png');
 	background-position: bottom  center;
 	background-repeat: no-repeat;
 	background-size: 200%;	
@@ -569,7 +616,6 @@ max-width: 400px;
 	background-image: url('../assets/img/layered-grandprix-bg.jpg');
 	background-position: center center;
     background-size: 100% 100%;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     transform: translateZ(0);-webkit-transform: translateZ(0);
 }
@@ -609,6 +655,54 @@ max-width: 400px;
 }
 
 
+.front-news .baby {
+	margin: 2em auto 2em auto;
+}
+
+
+.front-news h2 {
+	font-size: 1.6em;
+	font-weight:600;
+	font-family: "Montserrat", sans-serif
+	
+}
+
+.front-news .recent-news {
+	padding-right: 40px;
+}
+
+.front-news .entry-summary {
+	font-size: 1.6em;
+	
+}
+
+.front-news .entry-summary a {
+	font-family: "Montserrat", sans-serif;
+	font-size: 0.8em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  display: block;
+}
+
+.front-news .ivycat-post, .front-news .really_simple_twitter_widget{
+	margin-top:40px;
+}
+
+.front-news .really_simple_twitter_widget {
+	padding-left:20px;
+}
+
+.front-news .really_simple_twitter_widget li {
+	margin-bottom:14px;
+}
+
+.front-news .twitter-link, .front-news .twitter-timestamp{
+	font-size: 0.5em;
+	font-family: "Montserrat", sans-serif;
+	
+}
+
+
 
 
 
@@ -623,6 +717,8 @@ footer {
 	padding: 30px;
 	margin-top: 0px;
     padding-top: 0px;
+    box-shadow: inset 0px 10px 20px rgba(0, 0, 0, 0.06);
+
 }
 
 footer.row {
@@ -633,20 +729,17 @@ footer.row {
 	font-family:"EB Garamond", serif;
 	color: #8b887b;
 	text-align:center;
+	margin-top:30px;
 }
 
 .sponsor ul {
 	display:block;
 	margin: 0 auto;
 	text-align:center;
-	margin-bottom: 30px;
 }
 .sponsor li {
     display: inline-block;
     text-align: center;
-    border-radius: 50%;
-    border: 1px solid #8b887b;
-    padding: 20px;
     width: 80px;
     margin: 30px;
     height: 80px;
@@ -660,7 +753,7 @@ footer.row {
     margin-bottom: 10em;
 }
 
-.footer-content span {
+.footer-content span{
 	font-size: 1.8em;
 	display:block;
 	line-height:2.5em;
@@ -705,10 +798,18 @@ footer.row {
 .footer-content ul li {
 	list-style:none;
 	line-height: 2em;
-
+	
 }
 
-li.head {
+.footer-content ul li a, .footer-content span a {
+	color:#8b887b;
+}
+
+.footer-content ul li a:hover, .footer-content span a:hover{
+	color: #000;
+}
+
+.footer-content ul li.head a{
     background: transparent;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
@@ -731,30 +832,31 @@ span.socicon {
   transition: all 500ms ease-out;
  }
  
- .socicon:hover {
+ footer-content .socicon:hover {
 	 color: #000;
  }
  
- .twitter {
-	 color:#4099ff;
+ .twitter a{
+	 color:#4099ff !important;
  }
- span.twitter:before {
+ 
+ span.socicon.twitter:before {
 	 width:0px;
 	 margin:0px 6px 0px 0px;
 	 padding:0px;
  }
  
- .facebook {
-	 color: #3b5998;
+ .facebook a{
+	 color: #3b5998 !important;
  }
- .instagram {
-	 color: #517fa4;
+ .instagram a{
+	 color: #517fa4 !important;
  }
- .vimeo {
-	 color: #aad450;
+ .vimeo a{
+	 color: #aad450 !important;
  }
- .google {
-	 color: #dd4b39;
+ .google a{
+	 color: #dd4b39 !important;
  }
 
 footer .bar {
@@ -810,7 +912,7 @@ max-width: 200px;
 	background-position: center center;
 }
 
-.hero.Blood {
+.hero.Royal {
 	background-image:url('../assets/img/horse-head.jpg');
 	background-size: cover;
 	background-position: center center;
@@ -818,6 +920,18 @@ max-width: 200px;
 
 .hero.events {
 	background-image:url('../assets/img/event-hero.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+
+.hero.Story {
+	background-image:url('../assets/img/cork-board.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+
+.hero.Contact {
+	background-image:url('../assets/img/phones.jpg');
 	background-size: cover;
 	background-position: center center;
 }
@@ -888,7 +1002,7 @@ hr.baby {
 
 .subnav-bar.sticky {
 	position:fixed;
-	top:100px;
+	top:70px;
 	width: 100%;
 	box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);
 	z-index:2000;
@@ -967,16 +1081,13 @@ transform: scale(1.1);
 
 
 
+.bio-section .block-content p {
+	margin-bottom:20px;
+	max-width: 700px;
+	    text-align-last: left;
+	        text-indent: 50px;
 
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -1007,12 +1118,21 @@ transform: scale(1.1);
 } /* Define mobile styles */
 
 @media only screen and (max-width: 40em) {
-/*
-	.inner-inner-wrap {
-	overflow: auto;
-    max-height: none;
-    }
-  */  
+	.block, .top-blurb.dark, .top-blurb, .front-estates .block, .front-news .row{
+		padding: 50px 20px;
+	}
+	
+	.front-estates {
+		padding: 0px;
+	}
+	
+	.button{
+	font-size: 0.8em;
+    padding: 2em 1em 2em 1em;
+    width: 100%;
+    margin: 40px 0 0;
+	}
+	
 	.top-bar-container {
     	margin-top: 50px;
     	position: absolute;
@@ -1025,13 +1145,16 @@ transform: scale(1.1);
 	}
 	.button.menu-dropdown {
 	position: fixed;
-    right: -20px;
-    top:-20px;
+    right: 0;
+    top: -20px;
     padding: 20px;
     background: #fff;
     box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
-    z-index:2000;
-    font-size:1.6em;
+    z-index: 2000;
+    width: auto;
+    margin: 0px;
+    margin-top: 7px;
+    font-size: 1.2em;
 	}
 	
 	 .hero, #splash {
@@ -1048,10 +1171,31 @@ box-shadow: inset 1px 0px 30px rgba(0, 0, 0, 0.41);
 		font-size: 1.0em;
 	}
 	
-	.block {
-		padding: 20px;
+	
+	.sitemap {
+		display:none;
+	}
+	
+	.image {
+		min-height: 200px;
+	}
+	
+	.video {
+		min-height: 400px;
 	}
 
+	.front-news .ivycat-post{
+		margin-bottom:60px;
+	}
+	
+	
+	.hero.Estate {
+	background-image: url('../assets/img/estate-far.jpg');
+	background-size:cover;
+	background-position: top center;
+}
+	
+	
  } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
 /* Medium screens */

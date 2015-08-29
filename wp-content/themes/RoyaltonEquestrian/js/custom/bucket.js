@@ -42,15 +42,12 @@ $(function(){
     
  
  
-if((/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())) || ismobile ){
-	$('.hero, #splash').css({'background-attachment' : 'scroll'});
-}
- 
- 
  /* ----- SCROLL FUNCTIONS -----*/
  
 
+
 $('.inner-inner-wrap').scroll(function(){ 
+
 
  /* ----- sticky header -----*/
 var position = $(".container").offset().top;
@@ -60,7 +57,13 @@ var position = $(".container").offset().top;
 	$('.top-bar-container').removeClass('sticky').addClass('start');
 	}
 	
+	
+	
+	
+if( !(ismobile)) {
+	
  /* ----- sticky subnav -----*/
+if ($('.subnav-bar').length) {
 var subnavposition = $(".subnav-bar").offset().top;
 console.log(subnavposition) ;
 	if (subnavposition <= 100) {
@@ -71,7 +74,7 @@ console.log(subnavposition) ;
 		$('.subnav-bar').removeClass('sticky');
 		$('.top-bar-container.sticky').css({'box-shadow' : '0px 4px 2px rgba(0, 0, 0, 0.3);'});
 	}
-	
+	}
 	
  /* ----- subnav highlighting -----*/
  
@@ -79,9 +82,11 @@ console.log(subnavposition) ;
 
  /* ----- scrollbar width accomodation  -----*/	
 	
-	if( !(ismobile)) {
 	$('.subnav-bar.sticky').css({'width' : 'calc(100% - 1em)'});
 	$('.top-bar-container.sticky').css({'width' : 'calc(100% - 1em)'});
+	
+	
+	
 	}
 	
 	
@@ -96,8 +101,9 @@ $('.image').each(function() {
 
       
 $(this).css('background-image', 'url('+ $(this).attr("data-original") +')');
-$(this).lazyload({ effect : "fadeIn"  });  
-
+if( !(ismobile)) {
+	$(this).lazyload({ effect : "fadeIn"  });  
+}
 });
   
     

@@ -39,7 +39,6 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	wp_enqueue_script( 'fastclick' );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'foundation' );
-	wp_enqueue_script( 'foundation-equalizer' );
 
 
 	}
